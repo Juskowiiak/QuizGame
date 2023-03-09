@@ -1,0 +1,685 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caixa {
+  border: 6px solid #000;
+  width: 450px;
+  height: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: Roboto;
+}
+.caixa-screen {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #252525, rgb(154, 163, 161));
+  border-radius: 4px 4px 0 0;
+}
+.caixa-screen-tela {
+  border: 3px solid #000;
+  background-image: url(/img/wall1.jpg);
+  position: relative;
+  width: 80%;
+  height: 70%;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.caixa-screen-tela-loading {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  height: 100%;
+  position: relative;
+}
+.caixa-screen-tela-loading img {
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  left: 25%;
+  top: 10%;
+  animation: load infinite 4s ease alternate-reverse;
+}
+.caixa-screen-tela-pergunta {
+  padding: 2rem 1rem;
+  position: relative;
+  color: #fff;
+  height: 100%;
+}
+.caixa-screen-tela-pergunta .nr {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-right: 0.6rem;
+  text-decoration: underline;
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.4rem;
+  color: cyan;
+}
+.caixa-screen-tela-pergunta h4 {
+  font-size: 1.3rem;
+}
+.caixa-screen-tela-pergunta .pergunta {
+  display: inline;
+}
+.caixa-screen-tela-pergunta .tempo {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+.caixa-screen-tela-pontos {
+  position: relative;
+  height: 100%;
+  opacity: 0;
+  transition: all 5s ease-in;
+}
+.caixa-screen-tela-pontos .mostrarPontos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+.caixa-screen-tela-solucao {
+  height: 100%;
+  padding: 0.3rem 0.4rem;
+  overflow-y: scroll;
+}
+.caixa-screen-tela-solucao-questao-perg {
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+}
+.caixa-screen-tela-solucao-questao-perg-resp {
+  margin-bottom: 2rem;
+}
+.caixa-screen-tela-solucao-questao-perg-resp h5 {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  color: rgb(0, 219, 219);
+}
+.caixa-screen-tela-solucao-questao-perg-resp h5 span {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.caixa-screen-tela-solucao-questao-perg-resp h5 span i {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-screen-tela-solucao-questao-perg-resp h5 span .errada {
+  color: red;
+}
+.caixa-screen-tela-solucao-questao-perg-resp h5 span .certa {
+  color: green;
+}
+.caixa-screen-tela-over {
+  background-color: #000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.caixa-screen-tela-over h2 {
+  color: red;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px #aeaeae;
+  display: flex;
+  flex-direction: column;
+}
+.caixa-screen-tela-over i {
+  animation: caveira infinite 1.5s alternate-reverse;
+  margin-top: 0.5rem;
+  font-size: 3.5rem;
+}
+.caixa-touch {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #252525, rgb(154, 163, 161));
+  border-radius: 0 0 4px 4px;
+}
+.caixa-touch-tela {
+  border: 3px solid #000;
+  width: 80%;
+  height: 70%;
+  position: relative;
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.caixa-touch-tela-loading {
+  background-color: black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  position: relative;
+}
+.caixa-touch-tela-loading img {
+  height: 90%;
+  width: 70%;
+}
+.caixa-touch-tela-loading p {
+  color: #fff;
+  position: absolute;
+  bottom: 15%;
+  text-shadow: 1px 1px 1px #000;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.caixa-touch-tela-next {
+  text-decoration: underline;
+  color: cyan;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid cyan;
+  padding: 0.4rem 1.4rem;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3%;
+  font-size: 1.2rem;
+  transition: all 1s ease-in;
+  display: none;
+}
+.caixa-touch-tela-next:hover {
+  background-color: darkblue;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.caixa-touch-tela-intro {
+  border: 1px solid transparent;
+  position: relative;
+  text-align: center;
+  height: 100%;
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+}
+.caixa-touch-tela-intro .pag {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  z-index: 2;
+  color: #fff;
+}
+.caixa-touch-tela-intro .btnGo {
+  text-decoration: underline;
+  color: cyan;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid cyan;
+  padding: 0.1rem 0.7rem;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3%;
+  font-size: 1rem;
+  transition: all 1s ease-in;
+  z-index: 2;
+}
+.caixa-touch-tela-intro .btnGo:hover {
+  background-color: darkblue;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.caixa-touch-tela-intro-i0 {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  transition: all 1.2s ease-in;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-intro-i0 .img1 {
+  height: 50%;
+  width: 40%;
+  position: absolute;
+  left: -5%;
+  bottom: -5%;
+}
+.caixa-touch-tela-intro-i0 .img2 {
+  height: 120%;
+  width: 100%;
+  top: -20%;
+  left: 0;
+  position: absolute;
+}
+.caixa-touch-tela-intro-i0 p {
+  width: 60%;
+  color: cyan;
+  line-height: 1.3rem;
+  position: absolute;
+  top: 22%;
+  left: 20%;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-intro-i0 p span {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.caixa-touch-tela-intro-i0 p input {
+  border-radius: 5px;
+  padding-left: 5%;
+  width: 60%;
+  outline: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  transition: all 2s ease;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.caixa-touch-tela-intro-i0 p input:hover {
+  background-color: transparent;
+  color: cyan;
+}
+.caixa-touch-tela-intro-i0 p input:focus {
+  background-color: transparent;
+  color: cyan;
+  text-transform: lowercase;
+}
+.caixa-touch-tela-intro-i1 {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  transition: all 1.2s ease-in;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-intro-i1 .img1 {
+  height: 50%;
+  width: 40%;
+  position: absolute;
+  left: 20%;
+  bottom: -5%;
+}
+.caixa-touch-tela-intro-i1 .img2 {
+  position: absolute;
+  height: 115%;
+  width: 115%;
+  left: -10%;
+  top: -20%;
+}
+.caixa-touch-tela-intro-i1 p {
+  text-shadow: 1px 1px 1px #000;
+  color: cyan;
+  position: absolute;
+  top: 15%;
+  max-width: 65%;
+  left: 16%;
+}
+.caixa-touch-tela-intro-i1 p span {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.caixa-touch-tela-intro-i2 {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  transition: all 1.2s ease-in;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-intro-i2 .img1 {
+  height: 50%;
+  width: 40%;
+  position: absolute;
+  right: -5%;
+  bottom: -5%;
+}
+.caixa-touch-tela-intro-i2 .img2 {
+  height: 120%;
+  width: 100%;
+  top: -20%;
+  left: 0;
+  position: absolute;
+}
+.caixa-touch-tela-intro-i2 .img3 {
+  position: absolute;
+  height: 10%;
+  width: 7%;
+  top: 29%;
+  left: 71%;
+}
+.caixa-touch-tela-intro-i2 p {
+  text-shadow: 1px 1px 1px #000;
+  color: cyan;
+  position: absolute;
+  top: 19%;
+  max-width: 45%;
+  left: 28%;
+}
+.caixa-touch-tela-intro-i2 p span {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.caixa-touch-tela-intro-i3 {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  transition: all 1.2s ease-in;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-intro-i3 .img1 {
+  height: 50%;
+  width: 40%;
+  position: absolute;
+  left: -5%;
+  top: -3%;
+  transform: rotate(180deg);
+}
+.caixa-touch-tela-intro-i3 .img2 {
+  height: 110%;
+  width: 100%;
+  top: -4%;
+  left: -2%;
+  position: absolute;
+}
+.caixa-touch-tela-intro-i3 p {
+  width: 45%;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  color: cyan;
+}
+.caixa-touch-tela-intro-i3 p span {
+  color: #ffd139;
+  font-size: 1.25rem;
+}
+.caixa-touch-tela-intro-i4 {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  transition: all 1.2s ease-in;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-intro-i4 h3 {
+  width: 70%;
+  position: absolute;
+  top: 20%;
+  color: cyan;
+  left: 15%;
+}
+.caixa-touch-tela-intro-i4 h3 .recebeNome {
+  color: #fff;
+  font-size: 1.4rem;
+}
+.caixa-touch-tela-intro-i4 p {
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid cyan;
+  padding: 0.4rem 1.4rem;
+  cursor: pointer;
+  left: 37%;
+  top: 60%;
+  font-size: 1.2rem;
+  transition: all 1s ease-in;
+  animation: iniciar infinite 1s alternate-reverse;
+}
+.caixa-touch-tela-opcoes {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  max-height: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  transition: all 1s ease-in;
+  display: none;
+}
+.caixa-touch-tela-opcoes .opcao {
+  border: 2px solid rgb(0, 191, 197);
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+  min-width: 140px;
+  max-width: 170px;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition: all 0.6s ease-in;
+  border-radius: 10px;
+  padding-block: 0.3rem;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+.caixa-touch-tela-opcoes .opcao:hover {
+  background-color: cyan;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.caixa-touch-tela-over {
+  background-color: #000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  display: none;
+}
+.caixa-touch-tela-over p {
+  color: red;
+  font-size: 1.5rem;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  text-shadow: 1px 1px 1px #aeaeae;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.caixa-touch-tela-over p:hover {
+  color: #fff;
+  text-shadow: 2px 2px 2px #aeaeae;
+}
+.caixa-touch-tela-over-opcao {
+  border: 1px solid red;
+  height: 50%;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+.caixa-touch-tela-over-opcao h3 {
+  color: red;
+  text-shadow: 1px 1px 1px #333333;
+  font-size: 1.4rem;
+}
+.caixa-touch-tela-over-opcao div {
+  margin-top: 0.6rem;
+  display: flex;
+}
+.caixa-touch-tela-over-opcao div .opcao {
+  font-size: 1.2rem;
+  border: none;
+}
+.caixa-touch-tela-over-opcao div .opcao:hover {
+  text-decoration: underline;
+}
+.caixa-touch-tela-reiniciar {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  display: none;
+}
+.caixa-touch-tela-reiniciar p {
+  color: cyan;
+  font-size: 1.5rem;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  text-shadow: 1px 1px 1px #aeaeae;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.caixa-touch-tela-reiniciar p:hover {
+  color: #fff;
+  text-shadow: 2px 2px 2px #aeaeae;
+}
+.caixa-touch-tela-reiniciar-opcao {
+  border: 1px solid cyan;
+  height: 50%;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background-image: url("/img/wall1.jpg");
+  background-size: 100% 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+.caixa-touch-tela-reiniciar-opcao h3 {
+  color: cyan;
+  text-shadow: 1px 1px 1px #333333;
+  font-size: 1.4rem;
+}
+.caixa-touch-tela-reiniciar-opcao div {
+  margin-top: 0.6rem;
+  display: flex;
+}
+.caixa-touch-tela-reiniciar-opcao div .opcao {
+  font-size: 1.2rem;
+  border: none;
+}
+.caixa-touch-tela-reiniciar-opcao div .opcao:hover {
+  text-decoration: underline;
+}
+.caixa-touch-tela-resultado {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.caixa-touch-tela-resultado .ver-resultado {
+  border: 1px solid cyan;
+  border-radius: 15px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  text-align: center;
+  transition: all 1s ease;
+}
+.caixa-touch-tela-resultado .ver-resultado:hover {
+  background-color: darkblue;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.caixa .barra {
+  border: 1px solid #000;
+  padding: 0.2rem;
+  border-radius: 3px;
+  position: absolute;
+  left: -1%;
+  top: 50%;
+  width: 102%;
+  transform: translateY(-50%);
+  background-color: #000;
+}
+
+@keyframes load {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes iniciar {
+  from {
+    transform: scale(1.2);
+    background-color: #fff;
+    border: 2px solid cyan;
+    color: cyan;
+  }
+  to {
+    background-color: cyan;
+    border: 2px solid #fff;
+    color: #fff;
+    transform: scale(1);
+  }
+}
+@keyframes caveira {
+  from {
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 2px 2px 2px #aeaeae;
+    transform: scale(1.1);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

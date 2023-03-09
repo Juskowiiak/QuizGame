@@ -1,0 +1,12 @@
+@mixin padrao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin back {
+  background-image: url(/img/wall1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+}

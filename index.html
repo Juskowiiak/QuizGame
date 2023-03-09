@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="caixa">
+      <div class="caixa-screen">
+        <div class="caixa-screen-tela">
+          <div class="caixa-screen-tela-loading">
+            <img src="/img/logo.png" />
+          </div>
+          <div class="caixa-screen-tela-pergunta">
+            <span class="nr">1/10</span>
+            <h4 class="pergunta">Who was the eldest son of King Afonso III of Portugal?</h4>
+            <p class="tempo"><span class="minutos"></span>:<span class="segundos"></span></p>
+          </div>
+          <div class="caixa-screen-tela-pontos">
+            <p class="mostrarPontos"><span class="recebePonto"></span> Points</p>
+          </div>
+          <div class="caixa-screen-tela-solucao"><!-- tela solucao é preenchida no java.js --></div>
+          <div class="caixa-screen-tela-over"><h2>Game Over <i class='bx bxs-skull'></i></h2></div>
+        </div>
+      </div>
+      <!-- ************************************* TOUCH SCREEN **************** -->
+      <div class="caixa-touch">
+        <div class="caixa-touch-tela">
+          <div class="caixa-touch-tela-loading">
+            <img src="/img/loading.gif" />
+            <p>Please wait...</p>
+          </div>
+          <div class="caixa-touch-tela-intro">
+            <p class="pag"><span class="pagGo">1</span>/5</p>
+            <p class="btnGo">Go</p>
+            <div class="caixa-touch-tela-intro-i0">
+            <img src="/img/robot.gif" class="img1">
+            <img src="/img/chat1.png" class="img2">
+            <p>Hey wasup buddy!!!  <span>I'm Zeno.</span>Whats your name?<input type="text" placeholder="name..." class="meuNome" maxlength="10"></p>
+            </div>
+            <div class="caixa-touch-tela-intro-i1">
+              <img src="/img/robot.gif" class="img1">
+              <img src="/img/chat2.png" class="img2">
+              <p><span>First</span> and most important tip,
+              once you click the button <span>Next</span> you cant turn back !!! Be <span>smart</span></p>
+              
+            </div>
+            <div class="caixa-touch-tela-intro-i2">
+            <img src="/img/robot.gif" class="img1">
+            <img src="/img/chat0.png" class="img2">
+            <img src="/img/time.gif" class="img3">
+            <p>You have <span>180</span> seconds, to finish the Quiz.  <span>Otherwise <span>Game Over !!!</span></p> 
+            </div>
+            <div class="caixa-touch-tela-intro-i3">
+              <img src="/img/robot.gif" class="img1">
+              <img src="/img/chat3.png" class="img2">
+              <p>Correct answer = <span>3</span> points. Wrong answer only <span>1</span></p>
+            </div>
+            <div class="caixa-touch-tela-intro-i4">
+            <h3>Good luck <span class="recebeNome">Afonso</span> , you will need.</h3>
+            <p class="iniciarJogo">Iniciar</p>
+            </div>
+            
+          </div>
+          <div class="caixa-touch-tela-opcoes">
+            <div class="opcao">
+              <input type="radio" value="D.Dinis" id="op1" name="quiz" />
+              <label for="op1" class="opcaoA">D.Dinis</label>
+            </div>
+            <div class="opcao">
+              <input type="radio" value="D.Afonso" id="op2" name="quiz" />
+              <label for="op2" class="opcaoB">D.Afonso</label>
+            </div>
+            <div class="opcao">
+              <input type="radio" value="D.Filipe" id="op3" name="quiz" />
+              <label for="op3" class="opcaoC">D.Filipe</label>
+            </div>
+          </div>
+          <div class="caixa-touch-tela-over">
+            <p onclick="inicio()">Recomeçar</p>
+            <p onclick="fechar()">Sair</p>
+            <div class="caixa-touch-tela-over-opcao">
+              <h3>Deseja sair?</h3>
+              <div>
+                <p onclick="sim()" class="opcao">Sim</p>
+                <p onclick="nao()" class="opcao">Nao</p>
+              </div>
+            </div>
+          </div>
+          <div class="caixa-touch-tela-reiniciar">
+            <p onclick="inicio()">Recomeçar</p>
+            <p onclick="fechar()">Sair</p>
+            <div class="caixa-touch-tela-reiniciar-opcao">
+              <h3>Deseja sair?</h3>
+              <div>
+                <p onclick="sim()" class="opcao">Sim</p>
+                <p onclick="nao()" class="opcao">Nao</p>
+              </div>
+            </div>
+          </div>
+          <div class="caixa-touch-tela-resultado" >
+            <p class="ver-resultado">Check Results</p>
+          </div>
+          
+          <p onclick="next()" class="caixa-touch-tela-next">Next</p>
+        </div>
+      </div>
+      <div class="barra"></div>
+    </div>
+    <script src="java/inicio.js"></script>
+    <script src="java/java.js"></script>
+  </body>
+</html>
